@@ -18,7 +18,7 @@ describe('Leave Management API', () => {
   test('GET /api/employees/:id returns employee', async () => {
     const res = await request(app).get('/api/employees/E001');
     expect(res.statusCode).toBe(200);
-    expect(res.body.name).toBe('Keerthana S');
+    expect(res.body.name).toBe('Jaswanth Reddy');
   });
 
   test('GET /api/employees/:id returns 404 for unknown', async () => {
