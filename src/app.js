@@ -6,19 +6,16 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 let employees = [
-  { id: 'E001', name: 'Keerthana S', email: 'keerthana@company.com', role: 'employee', department: 'Engineering', leaveBalance: { casual: 8, sick: 6, earned: 12 } },
-  { id: 'E002', name: 'Rahul M',     email: 'rahul@company.com',     role: 'employee', department: 'Design',      leaveBalance: { casual: 6, sick: 6, earned: 10 } },
-  { id: 'E003', name: 'Priya K',     email: 'priya@company.com',     role: 'employee', department: 'Marketing',   leaveBalance: { casual: 10, sick: 5, earned: 14 } },
-  { id: 'M001', name: 'Arjun R',     email: 'arjun@company.com',     role: 'manager',  department: 'Engineering', leaveBalance: { casual: 10, sick: 8, earned: 15 } },
-  { id: 'M002', name: 'Sneha T',     email: 'sneha@company.com',     role: 'manager',  department: 'Design',      leaveBalance: { casual: 10, sick: 8, earned: 15 } },
+  { id: 'E001', name: 'Jaswanth Reddy', email: 'jaswanth@company.com', password: 'jaswanth123', role: 'employee', department: 'Engineering', leaveBalance: { casual: 8, sick: 6, earned: 12 } },
+  { id: 'E002', name: 'Keerthana',      email: 'keerthana@company.com', password: 'keerthana123', role: 'employee', department: 'Engineering', leaveBalance: { casual: 6, sick: 6, earned: 10 } },
+  { id: 'E003', name: 'Manoj',          email: 'manoj@company.com',     password: 'manoj123', role: 'employee', department: 'Engineering', leaveBalance: { casual: 10, sick: 5, earned: 14 } },
+  { id: 'M001', name: 'Spadana',        email: 'spadana@company.com',   password: 'spadana123', role: 'manager',  department: 'Engineering', leaveBalance: { casual: 10, sick: 8, earned: 15 } },
 ];
 
 let leaves = [
-  { id: 'L001', employeeId: 'E001', employeeName: 'Keerthana S', department: 'Engineering', type: 'casual',  fromDate: '2026-05-10', toDate: '2026-05-11', days: 2, reason: 'Family function',    status: 'pending',  appliedOn: '2026-05-01', managerId: 'M001' },
-  { id: 'L002', employeeId: 'E002', employeeName: 'Rahul M',     department: 'Design',      type: 'sick',    fromDate: '2026-04-20', toDate: '2026-04-21', days: 2, reason: 'Fever and cold',     status: 'approved', appliedOn: '2026-04-18', managerId: 'M002', actionOn: '2026-04-19', comment: 'Get well soon!' },
-  { id: 'L003', employeeId: 'E003', employeeName: 'Priya K',     department: 'Marketing',   type: 'earned',  fromDate: '2026-04-25', toDate: '2026-04-27', days: 3, reason: 'Vacation trip',     status: 'rejected', appliedOn: '2026-04-20', managerId: 'M001', actionOn: '2026-04-21', comment: 'Critical deadline period' },
-  { id: 'L004', employeeId: 'E001', employeeName: 'Keerthana S', department: 'Engineering', type: 'sick',    fromDate: '2026-03-05', toDate: '2026-03-05', days: 1, reason: 'Doctor appointment', status: 'approved', appliedOn: '2026-03-04', managerId: 'M001', actionOn: '2026-03-04', comment: 'Approved' },
-  { id: 'L005', employeeId: 'E002', employeeName: 'Rahul M',     department: 'Design',      type: 'casual',  fromDate: '2026-05-15', toDate: '2026-05-15', days: 1, reason: 'Personal work',     status: 'pending',  appliedOn: '2026-05-02', managerId: 'M002' },
+  { id: 'L001', employeeId: 'E001', employeeName: 'Jaswanth Reddy', department: 'Engineering', type: 'casual', fromDate: '2026-05-10', toDate: '2026-05-11', days: 2, reason: 'Family function',    status: 'pending',  appliedOn: '2026-05-01', managerId: 'M001' },
+  { id: 'L002', employeeId: 'E002', employeeName: 'Keerthana',      department: 'Engineering', type: 'sick',   fromDate: '2026-04-20', toDate: '2026-04-21', days: 2, reason: 'Fever and cold',     status: 'approved', appliedOn: '2026-04-18', managerId: 'M001', actionOn: '2026-04-19', comment: 'Get well soon!' },
+  { id: 'L003', employeeId: 'E003', employeeName: 'Manoj',          department: 'Engineering', type: 'earned', fromDate: '2026-04-25', toDate: '2026-04-27', days: 3, reason: 'Vacation trip',     status: 'rejected', appliedOn: '2026-04-20', managerId: 'M001', actionOn: '2026-04-21', comment: 'Critical deadline period' },
 ];
 let nextLeaveId = 6;
 
