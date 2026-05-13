@@ -49,22 +49,19 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying container...'
-                bat """
-                    docker stop ${CONTAINER_NAME} || exit 0
-                    docker rm   ${CONTAINER_NAME} || exit 0
-                    docker run -d ^
-                        --name ${CONTAINER_NAME} ^
-                        -p ${APP_PORT}:3000 ^
-                        --restart unless-stopped ^
-                        ${IMAGE_NAME}:${IMAGE_TAG}
-                """
+                // Stop and remove old container (ignore errors if not exists)
+                bat "docker stop ${CONTAINER_NAME} || exit 0"
+                bat "docker rm ${CONTAINER_NAME} || exit 0"
+                // Start new container
+                bat "docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:3000 --restart unless-stopped ${IMAGE_NAME}:${IMAGE_TAG}"
             }
         }
 
         stage('Health Check') {
             steps {
                 echo 'Checking application health...'
-                bat 'ping -n 6 127.0.0.1 > nul'
+                // Wait 8 seconds for container to start
+                bat 'ping -n 9 127.0.0.1 > nul'
                 bat "curl -f http://localhost:${APP_PORT}/health"
             }
         }
