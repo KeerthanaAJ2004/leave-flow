@@ -9,7 +9,7 @@ let employees = [
   { id: 'E001', name: 'Jaswanth Reddy', email: 'jaswanth@company.com', password: 'jaswanth123', role: 'employee', department: 'Engineering', leaveBalance: { casual: 8, sick: 6, earned: 12 } },
   { id: 'E002', name: 'Keerthana',      email: 'keerthana@company.com', password: 'keerthana123', role: 'employee', department: 'Engineering', leaveBalance: { casual: 6, sick: 6, earned: 10 } },
   { id: 'E003', name: 'Manoj',          email: 'manoj@company.com',     password: 'manoj123', role: 'employee', department: 'Engineering', leaveBalance: { casual: 10, sick: 5, earned: 14 } },
-  { id: 'M001', name: 'Spadana',        email: 'spadana@company.com',   password: 'spadana123', role: 'manager',  department: 'Engineering', leaveBalance: { casual: 10, sick: 8, earned: 15 } },
+  { id: 'M001', name: 'Spandana',        email: 'spadana@company.com',   password: 'spadana123', role: 'manager',  department: 'Engineering', leaveBalance: { casual: 10, sick: 8, earned: 15 } },
 ];
 
 let leaves = [
